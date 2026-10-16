@@ -710,7 +710,7 @@ function togglePlay(){
 
 function actionCard(key, letter){
   const A = CONFIG.actions[key], nm = key === 'daegu' ? '대구 군위군' : '양구군', short = key === 'daegu' ? '대구' : '양구', pre = key === 'daegu' ? 'd' : 'y';
-  return `<div class="card" style="margin-top:20px"><h3>자료 ${letter}. ${nm}의 사과 산업 대응 계획</h3><p class="sub">만화를 읽고 ${nm}에서 하기로 한 일을 찾아보세요.</p>
+  return `<div class="card" style="margin-top:20px"><h3>자료 ${letter}. ${nm}의 사과 산업 대응 계획</h3><p class="sub">만화를 읽고 ${nm}의 사과 산업 대응 계획에 대해 알아봅시다.</p>
    ${A.img ? `<img class="comic" src="${A.img}" alt="${esc(A.alt)}">` : slot('만화 자료 자리', '')}
    ${srcLine(A)}
    <div class="two">
@@ -721,13 +721,12 @@ function actionCard(key, letter){
 function screenM3(){
   return `<main>${head('미션 3','대응 노력 조사하기','두 지역의 사과 농사를 돕는 노력을 만화로 살펴봐요. 지역의 기온·지형·품종과 연결해서 생각해 보세요.')}
    <div class="gloss"><b>기후변화 적응</b>: 달라지는 기후에 맞춰 피해를 줄이고 살아가려는 노력이에요.</div>
-   <div class="hint">만화의 "~하기로 했습니다"는 계획이에요. 계획이 있다고 해서 효과가 입증된 것은 아니니, 만화에 적힌 내용을 먼저 정리해 보세요.</div>
    ${actionCard('daegu', 'G')}${actionCard('yanggu', 'H')}
-   <div class="card" style="margin-top:20px"><h3>자료 I. 사과 품종 비교</h3><p class="sub">대구(군위)와 양구의 주요 품종을 비교해요.</p>
+   <div class="card" style="margin-top:20px"><h3>자료 I. 사과 품종 비교</h3><p class="sub">기후변화에 적응하여 변화한 대구(군위)와 양구의 현재 주요 품종을 비교해요.</p>
      ${varietyTable()}
      <div class="note-s">여기 적은 것은 두 지역의 주요 품종이에요. 재배 품종과 규모는 해마다 달라질 수 있어요.</div>
      ${srcLine(CONFIG.varieties)}
-     ${field('variety','두 지역의 주요 품종은 어떤 점이 같고 다른가요? 품종 선택과 기후는 어떤 관련이 있을까요?','품종만으로 기후 적응을 설명할 수는 없어요. 만화의 대응 노력, 위치·지형·기온 자료와 함께 생각해 보세요.')}
+     ${field('variety','두 지역의 주요 품종은 어떤 점이 같고 다른가요? 품종 선택과 기후는 어떤 관련이 있을까요?','만화의 대응 노력, 위치·지형·기온 자료와 함께 생각해 보세요.')}
    </div></main>`;
 }
 
